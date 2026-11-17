@@ -1,0 +1,67 @@
+loja-glow-dreams/
+├── loja-web/                      # Frontend da loja (vitrine)
+│   ├── src/
+│   │   ├── paginas/
+│   │   │   ├── home/
+│   │   │   ├── maquiagem/
+│   │   │   ├── pijamas/
+│   │   │   └── kits-presente/
+│   │   ├── componentes/
+│   │   └── estilos/
+│   └── public/
+│
+├── loja-mobile/                   # App (iOS/Android)
+│
+├── api-backend/                   # API principal
+│   ├── src/
+│   │   ├── modulos/
+│   │   │   ├── produtos/
+│   │   │   ├── carrinho/
+│   │   │   ├── pedidos/
+│   │   │   ├── clientes/
+│   │   │   ├── pagamentos/
+│   │   │   └── frete/
+│   │   └── config/
+│   └── tests/
+│
+├── catalogo-maquiagem/            # Dados e regras de maquiagem
+│   ├── bases/
+│   ├── batons/
+│   ├── sombras/
+│   ├── skincare/
+│   └── tons-e-subtons/
+│
+├── catalogo-pijamas/              # Dados e regras de pijamas
+│   ├── temas/
+│   │   ├── animais/
+│   │   ├── personagens/
+│   │   ├── natal-e-datas/
+│   │   └── fantasias/
+│   ├── tabela-de-tamanhos/
+│   └── tecidos/
+│
+├── painel-admin/                  # Gestão interna
+│   ├── estoque/
+│   ├── pedidos/
+│   └── relatorios/
+│
+├── marketing/
+│   ├── campanhas/
+│   ├── email-templates/
+│   ├── cupons-e-promocoes/
+│   └── redes-sociais/
+│
+├── design-system/                 # Cores, fontes, ícones, componentes
+│   ├── tokens/
+│   ├── icones/
+│   └── guia-de-marca/
+│
+├── infra/                         # Deploy e servidores
+│   ├── docker/
+│   ├── ci-cd/
+│   └── terraform/
+│
+└── docs/
+    ├── arquitetura.md
+    ├── api.md
+    └── guia-de-contribuicao.md
