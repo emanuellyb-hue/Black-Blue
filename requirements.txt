@@ -1,0 +1,13 @@
+# Dependências do projeto loja-glow-dreams
+#
+# O arquivo.py usa apenas a biblioteca padrão do Python (pathlib),
+# então não é preciso instalar nada para executá-lo.
+#
+# Se for desenvolver o api-backend em Python, descomente o que precisar:
+#
+# fastapi
+# uvicorn
+# sqlalchemy
+# pydantic
+# python-dotenv
+# pytest
