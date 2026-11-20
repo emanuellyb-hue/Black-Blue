@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Glow Dreams | Maquiagem de dia, pijamas de noite</title>
+  <!-- Importa o CSS (aparência) -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-modo="glow">
+
+  <!-- CABEÇALHO: logotipo, menu, troca de modo e carrinho -->
+  <header class="topo">
+    <a href="#inicio" class="logo">Glow <span>Dreams</span></a>
+
+    <nav id="menu" class="menu" aria-label="Menu principal">
+      <a href="#produtos">Produtos</a>
+      <a href="#tons">Achar meu tom</a>
+      <a href="#temas">Temas de pijama</a>
+      <a href="#novidades">Novidades</a>
+    </nav>
+
+    <div class="acoes">
+      <button id="btn-modo" class="btn-modo" aria-pressed="false">Ver o modo noite</button>
+      <button id="btn-carrinho" class="btn-carrinho" aria-label="Abrir carrinho">
+        Carrinho <span id="contador">0</span>
+      </button>
+      <button id="btn-hamburguer" class="hamburguer" aria-label="Abrir menu" aria-expanded="false">☰</button>
+    </div>
+  </header>
+
+  <main>
+    <!-- PÁGINA PRINCIPAL -->
+    <section id="inicio" class="hero">
+      <div class="hero-texto">
+        <h1 id="hero-titulo">Brilho de dia, sonhos à noite.</h1>
+        <p id="hero-texto">Maquiagem para o seu rosto brilhar e pijamas temáticos para o seu sono ficar mais divertido. Tudo em um só lugar.</p>
+        <a href="#produtos" class="btn">Ver produtos</a>
+        <a href="#tons" class="btn btn-claro">Achar meu tom de base</a>
+      </div>
+      <div class="hero-arte" aria-hidden="true">
+        <div class="astro" id="astro">☀</div>
+      </div>
+    </section>
+
+    <!-- SEÇÃO 1: PRODUTOS (filtro + carrinho) -->
+    <section id="produtos" class="secao">
+      <h2>Escolha o que levar</h2>
+      <p class="intro">Filtre por categoria e adicione ao carrinho.</p>
+      <div class="filtros" id="filtros">
+        <button class="filtro ativo" data-cat="todos">Todos</button>
+        <button class="filtro" data-cat="maquiagem">Maquiagem</button>
+        <button class="filtro" data-cat="pijama">Pijamas</button>
+      </div>
+      <div id="grade" class="grade"></div>
+    </section>
+
+    <!-- SEÇÃO 2: ACHAR O TOM DE BASE (simulador) -->
+    <section id="tons" class="secao secao-alt">
+      <h2>Ache o seu tom de base</h2>
+      <p class="intro">Escolha seu tom de pele e o subtom e veja a sugestão.</p>
+      <form id="form-tom" class="caixa">
+        <label for="tom">Tom de pele
+          <select id="tom">
+            <option value="claro">Claro</option>
+            <option value="medio">Médio</option>
+            <option value="escuro">Escuro</option>
+          </select>
+        </label>
+        <label for="subtom">Subtom (veias do pulso)
+          <select id="subtom">
+            <option value="frio">Azuladas (frio)</option>
+            <option value="neutro">Verde-azuladas (neutro)</option>
+            <option value="quente">Esverdeadas (quente)</option>
+          </select>
+        </label>
+        <button type="submit" class="btn">Ver minha sugestão</button>
+      </form>
+      <div id="resultado-tom" class="resultado" aria-live="polite">Sua sugestão aparece aqui.</div>
+    </section>
+
+    <!-- SEÇÃO 3: TEMAS DE PIJAMA (galeria interativa) -->
+    <section id="temas" class="secao">
+      <h2>Temas de pijama</h2>
+      <p class="intro">Clique em um tema para conhecer a coleção.</p>
+      <div class="abas" id="abas"></div>
+      <div id="painel-tema" class="painel" aria-live="polite"></div>
+    </section>
+
+    <!-- SEÇÃO 4: NOVIDADES (formulário com validação) -->
+    <section id="novidades" class="secao secao-alt">
+      <h2>Receba novidades e cupom</h2>
+      <p class="intro">Cadastre seu e-mail e ganhe 10% na primeira compra.</p>
+      <form id="form-news" class="caixa" novalidate>
+        <label for="nome">Nome
+          <input type="text" id="nome" placeholder="Seu nome">
+          <small class="erro" id="erro-nome"></small>
+        </label>
+        <label for="email">E-mail
+          <input type="email" id="email" placeholder="voce@email.com">
+          <small class="erro" id="erro-email"></small>
+        </label>
+        <button type="submit" class="btn">Quero meu cupom</button>
+      </form>
+      <p id="msg-news" class="resultado" aria-live="polite"></p>
+    </section>
+  </main>
+
+  <!-- CARRINHO (painel lateral) -->
+  <aside id="carrinho" class="carrinho" aria-label="Carrinho de compras">
+    <div class="carrinho-topo">
+      <h3>Seu carrinho</h3>
+      <button id="btn-fechar" aria-label="Fechar carrinho">✕</button>
+    </div>
+    <ul id="lista-carrinho"></ul>
+    <p class="total">Total: <strong id="total">R$ 0,00</strong></p>
+    <button id="btn-finalizar" class="btn">Finalizar pedido</button>
+    <button id="btn-limpar" class="btn btn-claro">Esvaziar carrinho</button>
+    <p id="msg-carrinho" class="resultado" aria-live="polite"></p>
+  </aside>
+  <div id="fundo" class="fundo"></div>
+
+  <!-- RODAPÉ -->
+  <footer class="rodape">
+    <p><strong>Glow Dreams</strong> — maquiagem e pijamas temáticos</p>
+    <p>Atendimento: contato@glowdreams.com.br | Seg a sex, das 9h às 18h</p>
+    <p>© 2026 Glow Dreams. Todos os direitos reservados.</p>
+  </footer>
+
+  <!-- Importa o JavaScript (interações) -->
+  <script src="script.js"></script>
+</body>
+</html>
